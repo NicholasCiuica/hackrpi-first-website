@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -22,5 +21,48 @@
                  width="35">
         </h1>
     </div>
+
+    <div>
+        <p id="SubTitle_Text" class="WhiteText">
+            <b>Current potholes in the world:</b>
+        </p>
+        <ol class="WhiteText">
+            <!-- List of potholes -->
+            <li id="LightBlue"> 34 Pine Ave. Sylvania, OH 43568
+                <button onclick="showOnMap(41.69, -83.81)">View on Map</button>
+            </li>
+            <li id="LightBlue"> 7763 Buckingham Lane Collegeville, PA 19426
+                <button onclick="showOnMap(40.16, -75.46)">View on Map</button>
+            </li>
+            <li id="LightBlue"> 129 Cactus Court Onalaska, WI 54658
+                <button onclick="showOnMap(43.88, -91.23)">View on Map</button>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Map container, used JS to display -->
+    <div id="map"></div>
+
+    <!-- Pothole form -->
+    <div class="container">
+        <!--using ids more than once not good practice, but not fetched by JS so its fine -->
+        <h1 id="Title_Text" class="WhiteText">Report a Pothole:</h1>
+        <form action="/action_page.php">
+            <!-- Form Fields, form doesn't actually do anything rn -->
+             <div>
+                <label class="WhiteText" for="name">Name:</label>
+             </div>
+             <div>
+                <input class="Margin" id="InputBox" type="text" name="name" placeholder="Your name...">
+             </div>
+             <div>
+                <label class="WhiteText" for="add">Address:</label>
+             </div>
+             <div>
+                <input class="Margin" id="InputBox" type="text" name="add" placeholder="Your address...">
+             </div>
+        </form>
+    </div>
+
 </body>
 </html>
