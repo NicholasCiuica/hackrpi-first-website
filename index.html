@@ -41,7 +41,7 @@
     </div>
 
     <!-- Map container, used JS to display -->
-    <div id="map"></div>
+    <div id="map" style="height:200px;"></div>
 
     <!-- Pothole form -->
     <div class="container">
@@ -61,8 +61,27 @@
              <div>
                 <input class="Margin" id="InputBox" type="text" name="add" placeholder="Your address...">
              </div>
+             <input class="Margin" id="SubmitBox" type="submit" value="Submit">
         </form>
     </div>
+
+    <script>
+        //initialize map and set view to default location and zoom level
+        var map = L.map('map').setView([41.69, -83.81], 13);
+        //set up leaflet map layer using OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+           attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        function showOnMap(lat, lng) {
+            //set view to selected location and zoom in
+            map.setView([lat, lng], 15);
+            //add marker to selected location
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup('Pothole Location')
+                .openPopup();
+        }
+    </script>
 
 </body>
 </html>
